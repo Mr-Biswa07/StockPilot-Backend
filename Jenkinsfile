@@ -61,4 +61,13 @@ pipeline {
     
     }
 }
-  
+stage('Download Task Definition') {
+            steps {
+                sh '''
+                aws ecs describe-task-definition \
+                --task-definition stockpilot-dev-task \
+                --query taskDefinition \
+                > task-definition.json
+                '''
+            }
+        }
