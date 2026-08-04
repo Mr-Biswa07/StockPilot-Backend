@@ -58,7 +58,10 @@ pipeline {
                 '''
             }
         }
-        stage('Download Task Definition') {
+    
+    }
+}
+  stage('Download Task Definition') {
             steps {
                 sh '''
                 aws ecs describe-task-definition \
@@ -68,8 +71,3 @@ pipeline {
                 '''
             }
         }
-
-
-    }
-}
-
